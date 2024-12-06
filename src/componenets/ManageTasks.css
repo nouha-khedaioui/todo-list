@@ -1,0 +1,284 @@
+:root {
+    /* Variables de couleurs */
+    --background-color: #f4f4f9;
+    --sidebar-color: #c9e6f0;
+    --border-color: #78b3ce;
+    --highlight-color: #fbf8ef;
+    --hover-color: #e0f7fa;
+    --button-bg-color: #78b3ce;
+    --button-hover-color: #649bb0;
+    --icon-color: #78b3ce;
+    --text-color: #333;
+    --notification-color: #f96e2a;
+    --background-boxes:#edf0f3;
+    }
+    .Tasks {
+    font-family:cursive ;
+    padding: 20px;
+    background-color: #f4f4f9; 
+    
+    }
+    
+    .Tasks h1 {
+    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+    }
+    
+    /* Task Categories */
+    .task-categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    }
+    
+    .category {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #e7f3fa; /* Light blue */
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #cce5f6;
+    transition: all 0.3s ease;
+    }
+    
+    .category:hover {
+    background-color: #cce5f6;
+    }
+    
+    
+    .add-task {
+    background-color: #82c4e3;
+    color: white;
+    font-size: 18px;
+    }
+    
+    /* Fenêtre ajouter categorie */
+    .modalB-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .modalB {
+      background-color: var(--background-boxes);
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    
+    .modalB h2 {
+      margin-bottom: 15px;
+      font-style: italic;
+      color: var(--text-color);
+    }
+    
+    .modalB input {
+      width: 70%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+    }
+    
+    .modalB-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    
+    .modalB-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    
+    .modalB-button.addB {
+      background-color: var(--button-bg-color);
+      color: white;
+    }
+    
+    .modalB-button.addB:hover {
+      background-color: var(--button-hover-color);
+    }
+    
+    .modalB-button.cancelB {
+      background-color: red;
+      color: white;
+    }
+    
+    .modalB-button.cancelB:hover {
+      background-color: darkred;
+    }
+    .delete-icon {
+      position: absolute;
+      top: -9px;
+      right: 5px;
+      cursor: pointer;
+      color: transparent; 
+      font-size: 20px;
+      transition: transform 0.8s, color 0.3s;
+    }
+    
+    .delete-icon:hover {
+      color: red;
+      transform: scale(1.2);
+    }
+    /* General task sections */
+    .task-sections {
+      display: flex;
+      gap: 20px;
+      overflow: auto;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #f4f7fb;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+    
+    .task-boxes {
+      flex: 1;
+      background-color: #e7f3fa;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      min-width: 250px;
+    }
+    
+    .task-boxes h3 {
+    
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .task-boxes hr {
+      margin: 10px 0;
+      border: 0;
+      border-top: 1px solid #cce5f6;
+    }
+    
+    /* Task rows */
+    .Taches {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 10px;
+      margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Ajout des transitions */
+    border-radius: 10px; /* Ajout de coins arrondis pour l'effet */;
+    background-color: #f0f9ff; /* Changement de fond au survol */
+    }
+    .Taches:hover {
+      background-color: #f0f9ff; /* Changement de fond au survol */
+      transform: scale(1.02); /* Légèrement agrandi au survol */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajout d'une légère ombre */
+    }
+    
+    /* Task left section */
+    .task-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #82c4e3;
+      background-color: #ffff;
+    }
+    .circle.red {
+     border-color: red;
+    }
+    
+    .circle.orange {
+      border-color: orange;
+    }
+    
+    .circle.green {
+      border-color: green;
+    }
+    
+    .circle.grey {
+      border-color: grey;
+    }
+    /* Checkbox Styling */
+    .checkbox {
+    
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      appearance: none; /* Supprime l'apparence native */
+      border: 2px solid #82c4e3; /* Bordure bleue */
+      border-radius: 3px; /* Coins légèrement arrondis */
+      background-color: white;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .checkbox:checked {
+      background-color: #4caf50; /* Fond vert pour cochée */
+      border-color: #4caf50; /* Bordure verte */
+    }
+    
+    .checkbox:hover {
+      border-color: #388e3c; /* Bordure verte foncée au survol */
+    }
+    
+    
+    /* Task content */
+    .task-content {
+      flex: 1;
+      margin-left: 10px;
+      font-size: 18px;
+      font-style: italic;
+      color: #333;
+    }
+    
+    /* Task right section */
+    .task-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      
+    
+    }
+    
+    .icon-delete {
+      font-size: 18px;
+      color: #ff4834;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .icon-delete:hover {
+      color: #ff4834;
+      transform: scale(1.5);
+    }
+    

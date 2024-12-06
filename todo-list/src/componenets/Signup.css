@@ -1,0 +1,247 @@
+:root {
+    /* Variables de couleurs */
+    --background-color: #f4f4f9;
+    --sidebar-color: #c9e6f0;
+    --border-color: #78b3ce;
+    --highlight-color: #fbf8ef;
+    --hover-color: #e0f7fa;
+    --button-bg-color: #78b3ce;
+    --button-hover-color: #649bb0;
+    --icon-color: #78b3ce;
+    --text-color: #333;
+    --notification-color: #f96e2a;
+    --background-boxes: #edf0f3;
+  }
+  
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px; /* Ajout de perspective 3D */
+  }
+  
+ /* Main Container */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    margin-left: 60px;
+    background-color: var(--background-boxes);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform-style: preserve-3d; /* Active la profondeur 3D */
+    animation: rotateContainer 2s ease-in-out; /* Rotation une seule fois */
+  }
+  
+  /* Left Section */
+  .left {
+    flex: 1;
+    background: var(--sidebar-color);
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(-10deg); /* Effet incliné */
+    animation: swing 2s infinite ease-in-out alternate; /* Mouvement de balancier */
+  }
+  
+  .logo-container {
+    text-align: center;
+    width:400px;
+  }
+  
+  .logo {
+    width: 180px;
+    animation: pulse 2s infinite;
+  }
+  
+  .animated-title {
+    margin-top: 20px;
+    font-size: 48px;
+    color: var(--text-color);
+    font-weight: bold;
+    transform-style: preserve-3d; /* Activation 3D pour les lettres */
+  }
+  
+  .animated-title span {
+    display: inline-block;
+    animation: bounce 1s ease infinite alternate, rotateLetter 3s infinite ease-in-out;
+  }
+  
+  .animated-title span:nth-child(1) { animation-delay: 0.1s; }
+  .animated-title span:nth-child(2) { animation-delay: 0.2s; }
+  .animated-title span:nth-child(3) { animation-delay: 0.3s; }
+  .animated-title span:nth-child(4) { animation-delay: 0.4s; }
+  .animated-title span:nth-child(5) { animation-delay: 0.5s; }
+  .animated-title span:nth-child(6) { animation-delay: 0.6s; }
+  
+  /* Right Section */
+  .right {
+    flex: 1;
+    padding: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 1.2s ease-in-out;
+  }
+  
+  .form-container {
+ 
+    width: 400px;
+    padding-right: 20px;
+    text-align: center;
+    animation: float 4s infinite ease-in-out; /* Formulaire flottant */
+  }
+  
+  h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  
+  .tagline {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 10px 0 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--icon-color);
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--button-bg-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: hoverEffect 2s infinite ease-in-out;
+  }
+  
+  .login-btn:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  .signup-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
+  .sign-up {
+    color: var(--icon-color);
+    text-decoration: none;
+  }
+  
+  .sign-up:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animations */
+/* Animation mise à jour */
+@keyframes rotateContainer {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes swing {
+    from {
+      transform: rotateY(-10deg);
+    }
+    to {
+      transform: rotateY(10deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes rotateLetter {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes hoverEffect {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  

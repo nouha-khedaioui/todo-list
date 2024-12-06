@@ -1,0 +1,270 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+} 
+
+
+:root {
+    /* Variables de couleurs */
+    --background-color: #ffffff;
+    --sidebar-color: #c9e6f0;
+    --border-color: #78b3ce;
+    --highlight-color: #fbf8ef;
+    --hover-color: #e0f7fa;
+    --button-bg-color: #69c5f0;
+    --button-hover-color: #649bb0;
+    --icon-color: #78b3ce;
+    --text-color: #070708;
+    --notification-color: #f96e2a;
+    --background-boxes:#eaf4ff;
+    --text-b-color:#322ef7;
+    }
+    .calendar-container {
+      display:grid;
+      height: 100vh; /* Prend toute la hauteur de la fenêtre */
+      justify-content: center;
+      place-items: center;
+      width:100%;
+      position:relative;
+  background-color: var(--background-color);
+      margin: 10%;
+      border:none;
+      color:var(--text-color);
+      
+      
+  }
+
+
+.calendar-side {
+  flex: 1; /* Prend 50% de l'espace */
+  display: flex;
+  flex-direction: column;
+  border:1px solid;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  height: 100%;
+  position:absolute;
+  width:100%;
+  margin-right: 0%;
+  background-color: var( --background-color); 
+  color:var(--text-color);
+  
+}
+
+
+    .sidebar {
+        width: 200px; /* Largeur de la barre latérale */
+        height: 100vh; /* Hauteur de 100% de la fenêtre (viewport) */
+        background-color: var(--sidebar-color);
+        padding: 25px;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed; /* Fixe la barre latérale */
+        top: 0; /* Positionnée en haut de la page */
+        left: 0; /* Alignée à gauche */
+        z-index: 1000; /* Pour s'assurer qu'elle reste au-dessus du contenu principal */
+        overflow-y: auto; /* Permet un défilement interne si le contenu dépasse */
+      }
+      
+      .profile-section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--background-color); /* Bordure sous la section */
+        padding-bottom: 30px; /* Espacement entre le contenu et la bordure */
+      }
+      
+    
+    .profile-icon {
+    font-size: 40px; /* Taille de l'icône */
+    background-color:var(--background-color); /* Couleur d'arrière-plan */
+    border-radius: 50%; /* Forme circulaire */
+    width: 50px; /* Largeur totale */
+    height: 50px; /* Hauteur totale */
+    display: flex; /* Flexbox pour centrer */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    margin-bottom: 10px; /* Espacement en dessous */
+    border: 2px solid var(--icon-color); /* Bordure bleue */
+    margin-left: -15px;
+    
+    }
+    .profile-icon img{
+    width: 55px;
+    }
+    
+    .profile-icon span {
+    display: flex; /* Flexbox appliqué sur l'élément span */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    font-size: 25px; /* Ajustez la taille de l'icône à l'intérieur */
+    color:var(--icon-color); /* Couleur de l'icône */
+    }
+    
+    .profile-section p{
+    font-size: 20px;
+    margin-left: -10px;
+    }
+    
+    .bell-icon {
+    color:var(--notification-color);
+    font-size: 25px;
+    margin-top: -10px;
+    cursor: pointer;
+    margin-right: -20px;
+    }
+    
+    .create-task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color:var(--border-color);
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    font-style:italic;
+    }
+    
+    .create-task .icon {
+    font-size: 18px;
+    }
+    
+    .create-task:hover {
+    background-color:var(--button-hover-color) ;
+    }
+    
+    .menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    }
+    
+    .menu li {
+    display: flex; /* Pour aligner les icônes et le texte */
+    align-items: center; /* Centrer verticalement */
+    gap: 15px; /* Espacement entre l'icône et le texte */
+    padding: 10px 15px; /* Espacement interne */
+    font-size: 16px;
+    cursor: pointer;
+    width: calc(100% + 40px); /* Assurez-vous que la largeur est bien de 100% */
+    color:var(--text-color) ;
+    margin-bottom: 15px;
+    margin-left: -15px; /* Enlevez le décalage à gauche */
+    box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur totale */
+    font-style: italic;
+    background-color: transparent; /* Couleur par défaut */
+    }
+    
+    .menu li.active {
+    background-color:var(--background-color);  /* Couleur de fond pour l'élément actif */
+    color: #333;
+    }
+    
+    .menu li:hover {
+    background-color:var(--hover-color) ; /* Couleur de fond au survol */
+    }
+    
+    
+    .menu li .icon {
+    color:var(--border-color) ;
+    font-size: 23px;
+    margin-right: 18px;
+    margin-left: 5px;
+    }
+    
+    
+    .menu-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    }
+    #habit{
+        margin-right:50%;
+        margin-top: 3%;
+        
+       }
+
+
+
+
+       input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 2px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 63%;
+      }
+      
+      button {
+        padding: 10px 15px;
+        background-color:var(--sidebar-color);
+        color:white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 17%;
+      }
+      
+    
+      
+      .table {
+        display: table;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 17%;
+      }
+      
+      .table-row {
+        display: table-row;
+        
+      }
+      .table-head {
+        display: table-row;
+       background-color: #f18e5c;
+        
+      }
+      .table-cell {
+        display: table-cell;
+        padding: 5px;
+        border: 1px solid #ddd;
+        
+        
+      } 
+     
+    #chekb{
+      width:100%
+    }
+    
+    
+    .table-row:nth-child(even) {
+      background-color:wheat; /* Couleur pour les lignes paires */
+  }
+  
+  .table-row:nth-child(odd) {
+      background-color:var(--sidebar-color); /* Couleur pour les lignes impaires */
+  }
+  input[type="checkbox"]{
+    width: 100%;
+  }
+  #col1{
+    border-top-left-radius: 6px;
+  }
+  #add{
+    display: flex;
+    align-items: center;
+  }
+ 

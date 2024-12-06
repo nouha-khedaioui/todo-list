@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Variables de couleurs */
+    --background-color: #f4f4f9;
+    --sidebar-color: #c9e6f0;
+    --border-color: #78b3ce;
+    --highlight-color: #fbf8ef;
+    --hover-color: #e0f7fa;
+    --button-bg-color: #78b3ce;
+    --button-hover-color: #649bb0;
+    --icon-color: #78b3ce;
+    --text-color: #333;
+    --notification-color: #f96e2a;
+    --background-boxes:#edf0f3;
+    }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* General Layout */
+.calendar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 4%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 250px; /* Adjust the left margin to account for the sidebar */
+}
+
+/* Calendar Section */
+.calendar-section {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.calendar-section:hover {
+    transform: translateY(-5px);
+}
+
+.my-custom-calendar {
+    width: 100%;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    padding-top: 30px;
+}
+
+
+.my-custom-calendar .react-calendar__tile {
+    background-color:white;
+    border:none;
+    padding: 6px;
+    font-size: 14px;
+    transition: transform 0.2s;
+    
+  
+}
+
+.my-custom-calendar .react-calendar__tile:hover {
+    background: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+.my-custom-calendar .react-calendar__tile--active {
+    background: var(--sidebar-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-right:10px;
+    margin-left: 10px;
+}
+
+.my-custom-calendar .react-calendar__navigation__label {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+
+    border:none;
+}
+
+.my-custom-calendar .react-calendar__navigation__label:hover {
+    background-color: var(--sidebar-color);
+    color: white;
+}
+
+.my-custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
+    color: #ccc; /* Couleur des jours du mois voisin */
+}
+
+.my-custom-calendar .react-calendar__month-view__days__day {
+    color: black;
+    border:none;
+    margin-bottom:0.5%;
+    margin-top:0.5%;
+    margin-right:0.5%;
+
+}
+.my-custom-calendar .react-calendar__navigation__arrow{
+    border:none;
+    margin:10px;
+}
+
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .calendar-container {
+        padding: 2% 2%;
+    }
+
+    .main-container {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .calendar-section {
+        min-width: 100%;
+        margin-top: 15px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    .my-custom-calendar .react-calendar__tile {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .my-custom-calendar .react-calendar__navigation__label {
+        font-size: 14px;
+    }
+}
+
+/* Task Section */
+.tasks-section {
+    flex: 0.35;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.task-button {
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.task-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.task-container {
+    margin-bottom: 12px;
+    background: var(--sidebar-color);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task {
+    margin: 8px 0;
+    padding: 10px;
+    background-color: var(--background-boxes);
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.task h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px; /* Largeur de la barre latérale */
+    height: 100vh; /* Hauteur de 100% de la fenêtre (viewport) */
+    background-color: var(--sidebar-color);
+    padding: 25px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed; /* Fixe la barre latérale */
+    top: 0; /* Positionnée en haut de la page */
+    left: 0; /* Alignée à gauche */
+    z-index: 1000; /* Pour s'assurer qu'elle reste au-dessus du contenu principal */
+    overflow-y: auto; /* Permet un défilement interne si le contenu dépasse */
+  }
+  
+  .profile-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--background-color); /* Bordure sous la section */
+    padding-bottom: 30px; /* Espacement entre le contenu et la bordure */
+  }
+  
+
+.profile-icon {
+font-size: 40px; /* Taille de l'icône */
+background-color:var(--background-color); /* Couleur d'arrière-plan */
+border-radius: 50%; /* Forme circulaire */
+width: 50px; /* Largeur totale */
+height: 50px; /* Hauteur totale */
+display: flex; /* Flexbox pour centrer */
+justify-content: center; /* Centrer horizontalement */
+align-items: center; /* Centrer verticalement */
+margin-bottom: 10px; /* Espacement en dessous */
+border: 2px solid var(--icon-color); /* Bordure bleue */
+margin-left: -15px;
+
+}
+.profile-icon img{
+width: 55px;
+}
+
+.profile-icon span {
+display: flex; /* Flexbox appliqué sur l'élément span */
+justify-content: center; /* Centrer horizontalement */
+align-items: center; /* Centrer verticalement */
+font-size: 25px; /* Ajustez la taille de l'icône à l'intérieur */
+color:var(--icon-color); /* Couleur de l'icône */
+}
+
+.profile-section p{
+font-size: 20px;
+margin-left: -10px;
+}
+
+.bell-icon {
+color:var(--notification-color);
+font-size: 25px;
+margin-top: -10px;
+cursor: pointer;
+margin-right: -20px;
+}
+
+.create-task {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 10px 15px;
+background-color:var(--border-color);
+color: #ffffff;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-bottom: 20px;
+width: 100%;
+justify-content: center;
+font-style:italic;
+}
+
+.create-task .icon {
+font-size: 18px;
+}
+
+.create-task:hover {
+background-color:var(--button-hover-color) ;
+}
+
+.menu {
+list-style: none;
+padding: 0;
+width: 100%;
+}
+
+.menu li {
+display: flex; /* Pour aligner les icônes et le texte */
+align-items: center; /* Centrer verticalement */
+gap: 15px; /* Espacement entre l'icône et le texte */
+padding: 10px 15px; /* Espacement interne */
+font-size: 16px;
+cursor: pointer;
+width: calc(100% + 40px); /* Assurez-vous que la largeur est bien de 100% */
+color:var(--text-color) ;
+margin-bottom: 15px;
+margin-left: -15px; /* Enlevez le décalage à gauche */
+box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur totale */
+font-style: italic;
+background-color: transparent; /* Couleur par défaut */
+}
+
+.menu li.active {
+background-color:var(--background-color);  /* Couleur de fond pour l'élément actif */
+color: #333;
+}
+
+.menu li:hover {
+background-color:var(--hover-color) ; /* Couleur de fond au survol */
+}
+
+
+.menu li .icon {
+color:var(--border-color) ;
+font-size: 23px;
+margin-right: 18px;
+margin-left: 5px;
+}
+
+
+.menu-icon {
+cursor: pointer;
+display: flex;
+align-items: center;
+}
